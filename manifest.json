@@ -1,0 +1,12 @@
+{
+  "name": "INGLES ML",
+  "short_name": "INGLES ML",
+  "description": "Aprende, practica y habla inglés con reconocimiento de voz",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eaf3ff",
+  "theme_color": "#0755c9",
+  "lang": "es",
+  "icons": []
+}

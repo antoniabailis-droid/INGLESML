@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0755c9">
+  <meta name="description" content="INGLES ML: aprende, practica y habla inglés con reconocimiento de voz.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>INGLES ML</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-area">
+      <div class="flag" aria-hidden="true">🇬🇧</div>
+      <div><div class="brand">INGLES ML</div><div class="tagline">Aprende. Practica. Habla.</div></div>
+    </div>
+    <div class="overall-box">
+      <div class="overall-top"><strong>Progreso general:</strong><strong id="overallPercent">0%</strong></div>
+      <div class="overall-bottom"><div class="overall-track"><div id="overallBar"></div></div><span id="overallText">0 de 250 tarjetas</span></div>
+    </div>
+    <button id="homeButton" class="home-button" aria-label="Ir al inicio" title="Inicio">⌂</button>
+  </header>
+
+  <main class="app-shell">
+    <section id="homeScreen" class="screen active">
+      <div class="welcome-card">
+        <p class="eyebrow">TU CURSO DE INGLÉS</p>
+        <h1>Habla inglés con confianza</h1>
+        <p>Practica escuchando y hablando. Avanza a tu ritmo con 25 bloques y 250 tarjetas.</p>
+        <div class="home-actions">
+          <button id="continueButton" class="primary">CONTINUAR</button>
+          <button id="chooseBlockButton" class="secondary">VER LOS 25 BLOQUES</button>
+        </div>
+      </div>
+      <div class="home-stats">
+        <div><strong id="completedCardsHome">0 / 250</strong><span>Tarjetas completadas</span></div>
+        <div><strong id="completedBlocksHome">0 / 25</strong><span>Bloques completados</span></div>
+      </div>
+      <div class="stage-grid">
+        <div class="stage"><b>01</b><span><strong>Fundamentos y tiempos verbales</strong><small>Bloques 1–10</small></span></div>
+        <div class="stage"><b>02</b><span><strong>Experiencias y pasado</strong><small>Bloques 11–14</small></span></div>
+        <div class="stage"><b>03</b><span><strong>Gramática y conectores</strong><small>Bloques 15–20</small></span></div>
+        <div class="stage"><b>04</b><span><strong>Comunicación y evolución</strong><small>Bloques 21–25</small></span></div>
+      </div>
+    </section>
+
+    <section id="blocksScreen" class="screen" hidden>
+      <div class="page-heading"><p class="eyebrow">PLAN DE ESTUDIO</p><h1>Elige un bloque</h1><p>Puedes empezar por cualquiera, continuar donde lo dejaste o repasar un bloque completado.</p></div>
+      <div id="blocksGrid" class="blocks-grid"></div>
+      <button id="blocksHomeButton" class="secondary wide">VOLVER AL INICIO</button>
+    </section>
+
+    <section id="practiceScreen" class="screen" hidden>
+      <div class="lesson-heading">
+        <div><p id="blockLabel" class="block-title">BLOQUE 1 · PRESENT SIMPLE</p><p id="blockDescription" class="block-description"></p></div>
+        <div id="cardLabel" class="card-label">Tarjeta 1 de 10</div>
+      </div>
+      <div class="lesson-card">
+        <div class="listen-first"><span class="speaker-icon">◖))</span> Escucha primero la frase en inglés</div>
+        <div class="english-panel">
+          <button id="listenPhraseButton" class="speaker-button" aria-label="Escuchar frase">◖))</button>
+          <div class="phrase-wrap"><div id="answerText" class="answer-text">I work every day</div><div id="pronunciationText" class="pronunciation-text">Pronunciación británica</div></div>
+        </div>
+        <div class="visual-guide"><span>◉</span><strong>Guía visual:</strong><span id="visualGuideText">I work every day</span></div>
+        <div class="repeat-hint"><span>✓</span> Repite ahora la frase en inglés</div>
+        <div class="spanish-prompt"><span class="prompt-label">DI EN INGLÉS</span><p id="promptText">Trabajo todos los días</p><p id="verbReference" class="verb-reference"></p></div>
+        <div class="controls">
+          <button id="repeatButton" class="repeat-button"><span>⟳</span><strong>REPITE<small>(solo la frase)</small></strong></button>
+          <button id="readyButton" class="ready-button"><span>🎙</span><strong>READY<small>(empieza a hablar)</small></strong></button>
+          <button id="stopButton" class="stop-button"><span>■</span><strong>STOP<small>(detener)</small></strong></button>
+        </div>
+        <div id="feedback" class="feedback" aria-live="polite">Pulsa READY para comenzar.</div>
+        <div id="heardText" class="heard-text"></div>
+      </div>
+      <div class="lesson-footer">
+        <div class="correct-total"><span class="check-mark">✓</span><span>Aciertos en esta tarjeta: <strong id="correctCounter">0 / 5</strong></span></div>
+        <div id="cardDots" class="card-dots" aria-label="Progreso del bloque"></div>
+        <button id="blocksButton" class="footer-blocks">☷ Ver bloques</button>
+      </div>
+    </section>
+
+    <section id="completeScreen" class="screen" hidden>
+      <div class="complete-card">
+        <div class="complete-mark">✓</div><p class="eyebrow">OBJETIVO ALCANZADO</p>
+        <h1 id="completeTitle">¡Bloque completado!</h1>
+        <p id="completeMessage">Has completado las diez tarjetas.</p>
+        <button id="nextBlockButton" class="primary wide">SIGUIENTE BLOQUE</button>
+        <button id="reviewBlockButton" class="secondary wide">REPASAR ESTE BLOQUE</button>
+        <button id="completeHomeButton" class="text-button">VOLVER AL INICIO</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>INGLES ML · Tu progreso se guarda en este dispositivo</footer>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
